@@ -2097,7 +2097,7 @@ body.menu-open .mobile-nav {
   align-items: center;
   justify-content: center;
   height: 320px;
-  background: #333 url("https://nuiq.com/events/assets/banner.png") center / cover no-repeat;
+  background: #333 url("assets/images/banner.png") center / cover no-repeat;
 }
 
 .events-banner h1 {
