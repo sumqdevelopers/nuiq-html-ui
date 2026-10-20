@@ -1,0 +1,12 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/", "destination": "/nuiq-home.html" },
+    { "source": "/contact", "destination": "/nuiq-contact.html" },
+    { "source": "/events", "destination": "/nuiq-events.html" },
+    { "source": "/blog", "destination": "/nuiq-blog.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/signup.html" }
+  ]
+}
