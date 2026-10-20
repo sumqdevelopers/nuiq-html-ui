@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Login – NuIQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Varela+Round&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-auth">
+
+  <main class="auth-main">
+    <div class="auth-panel">
+      <a class="auth-logo" href="nuiq-home.html" aria-label="NuIQ home">
+        <img src="https://nuiq.com/welcome/wp-content/uploads/2024/11/nuiq-logo.png" alt="NuIQ">
+      </a>
+      <h1>Login</h1>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <div class="auth-field">
+          <input id="email" type="email" placeholder=" " autocomplete="off" required>
+          <label for="email">Email</label>
+          <span class="err">Enter a valid email address.</span>
+        </div>
+        <div class="auth-field">
+          <input id="pw" type="password" placeholder=" " autocomplete="off" required>
+          <label for="pw">Password</label>
+          <span class="err">Enter your password.</span>
+        </div>
+        <a class="auth-forgot" href="#">Forgot password?</a>
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="auth-notice" id="authNotice" role="status" aria-live="polite"></div>
+      <p class="auth-alt">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    Copyright © <span id="yr">2026</span> NuIQ.com All Rights Reserved |
+    <a href="https://nuiq.com/welcome/privacy/?tab=privacy-policy">Privacy Policy</a> |
+    <a href="https://nuiq.com/welcome/privacy/?tab=terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

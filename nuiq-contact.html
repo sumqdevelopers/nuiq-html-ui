@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact NuIQ | Support for HIPAA-Compliant Therapy Notes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Varela+Round&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-teal">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="bar">
+      <a class="logo" href="nuiq-home.html" aria-label="NuIQ home">
+        <img src="https://nuiq.com/welcome/wp-content/uploads/2024/11/nuiq-logo.png" alt="NuIQ">
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="nuiq-home.html">Home</a>
+        <a href="nuiq-home.html#faqSection">FAQs</a>
+        <a class="active" href="nuiq-contact.html" aria-current="page">Contact</a>
+        <a href="nuiq-blog.html">Blog</a>
+        <a href="nuiq-home.html#pricingSection">Pricing</a>
+        <a href="nuiq-events.html">Events</a>
+        <a class="login" href="login.html">Login</a>
+        <a class="signup" href="signup.html">Sign Up</a>
+      </nav>
+
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="nuiq-home.html">Home</a>
+    <a href="nuiq-home.html#faqSection">FAQs</a>
+    <a class="active" href="nuiq-contact.html" aria-current="page">Contact</a>
+    <a href="nuiq-blog.html">Blog</a>
+    <a href="nuiq-home.html#pricingSection">Pricing</a>
+    <a href="nuiq-events.html">Events</a>
+    <a href="login.html">Login</a>
+    <a class="signup" href="signup.html">Sign Up</a>
+  </nav>
+
+  <main>
+    <h1 class="page-title">Contact NuIQ - Therapy Notes</h1>
+
+    <!-- ===================== CONTACT CARD ===================== -->
+    <section class="contact-card">
+      <div class="contact-info">
+        <div class="grp">
+          <h2>Visit Us</h2>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <a href="https://maps.app.goo.gl/XeHKgAAPV2E24dX1" target="_blank" rel="noopener">2435 W 450 S, Suite 103 Pleasant Grove, UT 84062</a>
+          </div>
+        </div>
+
+        <div class="grp">
+          <h2>Contact Us</h2>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+            <div>
+              <a href="mailto:sales@nuiq.com">Sales@nuiq.com</a>
+              <small>(<b>Sales</b> and <b>Queries</b>)</small>
+            </div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+            <div>
+              <a href="mailto:support@nuiq.com">Support@nuiq.com</a>
+              <small>(<b>Support</b> and <b>Feedback</b>)</small>
+            </div>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.1 6.1l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>
+            <a href="tel:8014625000">801-462-5000</a>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12a9.5 9.5 0 0 1 19 0c-1.2-1.2-3-1.2-4.2 0-1.3-1.2-3-1.2-4.3 0-1.3-1.2-3-1.2-4.3 0-1.2-1.2-3-1.2-4.2 0zM12 12v7.5a1.8 1.8 0 0 1-3.6 0M12 2v.5"/></svg>
+            <a class="umbrella" href="https://gamp.ai" target="_blank" rel="noopener">Umbrella Company: GAMP.ai</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="formside">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="f">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Your Name" required autocomplete="name">
+            <span class="err">Please enter your name.</span>
+          </div>
+          <div class="f">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="Phone" placeholder="Your Phone #" autocomplete="tel">
+            <span class="err">Please enter a valid phone number.</span>
+          </div>
+          <div class="f full">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="Email" placeholder="Your Email" required autocomplete="email">
+            <span class="err">Please enter a valid email address.</span>
+          </div>
+          <div class="f">
+            <label for="org">Organization</label>
+            <input type="text" id="org" name="Organization" placeholder="Your Organization Name" autocomplete="organization">
+          </div>
+          <div class="f">
+            <label for="ehr">EHR / EMR</label>
+            <input type="text" id="ehr" name="EHR" placeholder="Which EHR / EMR you use?">
+          </div>
+          <div class="f full">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="Message"></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="smsConsent" checked required>
+            <span>I Consent to Receive SMS Notifications and Alerts. Message frequency varies. Message &amp; data rates may apply. Text HELP to <a href="tel:8014625000">(801) 462-5000</a> for assistance. You can reply STOP to unsubscribe at any time.</span>
+          </label>
+
+          <button type="submit">Submit</button>
+          <div class="notice" id="notice" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq" id="faqSection">
+      <h2>Frequently Asked Questions</h2>
+      <p class="sub">Answers to Your Burning Questions: Unraveling the FAQs for a Seamless Experience</p>
+
+      <div class="acc open">
+        <button type="button" aria-expanded="true">How is NuIQ HIPAA compliant?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>At NuIQ, we take privacy and security seriously. We ensure HIPAA compliance by not storing any notes or session data. Q "Listens" to your session, either during a live therapy session, or while you dictate your notes/memory of the session afterwards. It does not save or keep the audio, transcription, or the resulting notes on your device or in the cloud. When you close the session after copying and pasting your notes into your EHR, the audio, transcription and resulting notes are gone from NuIQ forever.<br>The only exception is in the case of a processing error, in which case we do prompt you to save the audio to your device so you can import it and generate the notes at a later time. Once you have re-processed the audio file and deleted it from your device, the data is gone.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">How secure is my data on NuIQ?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>We prioritize the security and confidentiality of your data. NuIQ employs robust encryption protocols and follows industry best practices to ensure the protection of your information. Rest assured that your data is handled with the utmost care.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">Is NuIQ compatible with different devices and operating systems?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>Yes, NuIQ is designed to be compatible with various devices and operating systems. Whether you're using a PC, Mac, tablet, smartphone or recorder you should be able to access NuIQ seamlessly.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">What can I do if I have back to back sessions and NuIQ takes longer to process than my breaks?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>You can simply use your own device's app or recorder and upload at a later time to see NuIQ do its magic.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">Does NuIQ have to listen to the session or can I simply narrate my sessions and still produce a SOAP/DAP note?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>If you have backdated notes, this feature will be your best friend! You can simply narrate your session from your own notes/memory. NuIQ will still be able to provide the detailed notes you desire.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">Do I need to inform patients that NuIQ is in use?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>We encourage you to be familiar with your State regulations regarding the collection of two-party audio recording. States that require two-party consent are: California, Connecticut, Florida, Illinois, Maryland, Massachusetts, Michigan, Montana, Nevada, New Hampshire, Pennsylvania, and Washington. If you would like to include an Audio Consent Form in your client intake forms, <a href="https://docs.google.com/document/d/1pzDNYOETCHKNn3YxxEClfEfP0M0CPwTv2RqbPzYmsjA/edit?tab=t.0" target="_blank" rel="noopener">here is a template</a> you can use to create one for your practice.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">How accurate are the notes generated by Q?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>Q strives to provide accurate and comprehensive notes based on the recorded sessions or narrations. While NuIQ is designed to be highly accurate, it's important to review and verify the notes for any minor errors or omission</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">Can I customize the format or template of the generated notes?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>Currently, the format and template of the notes are standardized to DAP/SOAP/Session Progress Notes. However, we are continuously working on enhancing our platform, and customizability options may be available in the future.</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">I want NuIQ to be a resource for all of the therapists at my center, how can we do that?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div><a href="mailto:sales@nuiq.com">Reach out to us here</a> for a quote so we can provide you the best priced option</div>
+        </div>
+      </div>
+
+      <div class="acc">
+        <button type="button" aria-expanded="false">Still have unanswered questions? We're here to help!<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7"/></svg></button>
+        <div class="body">
+          <div>Reach out to our dedicated support team at <a href="mailto:support@nuiq.com">support@nuiq.com</a>, and we'll ensure your experience at NuIQ is as smooth as possible. Whether you have inquiries about our services, need technical assistance, or want further clarification, our team is ready to assist you.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="ftop">
+      <div class="fbrand">
+        <img class="flogo" src="https://nuiq.com/welcome/wp-content/uploads/2024/11/nuiq-logo.png" alt="NuIQ">
+        <p>
+          Copyright © <span id="yr">2026</span> NuIQ.com All Rights Reserved |
+          <a href="https://nuiq.com/privacy/">Privacy Policy</a> |
+          <a href="https://nuiq.com/privacy/">Terms of Service</a>
+        </p>
+        <div class="badges">
+          <img src="https://nuiq.com/assets/images/kipuintegration.png" alt="Kipu Integrated Partner">
+          <img src="https://nuiq.com/assets/images/logo_hipaa.png" alt="HIPAA Compliant">
+        </div>
+      </div>
+
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="nuiq-home.html">Features</a></li>
+          <li><a href="nuiq-home.html#pricingSection">Pricing</a></li>
+          <li><a href="nuiq-home.html">Reviews</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://nuiq.com/about/">About Us</a></li>
+          <li><a href="nuiq-contact.html">Contact Us</a></li>
+          <li><a href="nuiq-blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#faqSection">FAQs</a></li>
+          <li><a href="nuiq-contact.html">Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Follow us</h3>
+        <div class="social">
+          <a href="https://www.facebook.com/NuIQ.info" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.6V1h-3.6C10.1 1 9.4 3.9 9.4 5.8V8H7v4h2.4v11H14V12h3.3l.4-4H14z"/></svg>
+          </a>
+          <a href="https://twitter.com/hello_nuiq" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.3 5.5-6.3zm-1.2 17.9h1.9L7.1 4.2H5.1L17 20.2z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/hello.nuiq/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/nuiq" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM7.1 20.5H3.6V9h3.5v11.5zm13.4 0h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@hello_NuIQ" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="totop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
