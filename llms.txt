@@ -1,0 +1,39 @@
+# NuIQ
+
+> NuIQ is an AI therapy notes tool for mental health professionals. It writes SOAP, DAP and progress notes from live in-person sessions, telehealth sessions, uploaded recordings, dictated summaries or typed details, for individual, family and group sessions. Notes are copied into any EHR. NuIQ is made by NuIQ LLC, Pleasant Grove, Utah.
+
+- Pricing: free 2-week trial (no credit card), Professional at $49 per user per month, and custom Enterprise pricing for centers with 2+ users.
+- EHR integration partners: Alleva, Kipu and AdvancedMD. Notes can be pasted into any EHR.
+- Contact: sales@nuiq.com (sales), support@nuiq.com (support), 801-462-5000.
+
+## Main pages
+
+- [Home](https://nuiq.com/): features, how it works, pricing and FAQs
+- [Pricing](https://nuiq.com/#pricingSection): Free Trial, Professional and Enterprise plans
+- [FAQs](https://nuiq.com/#faqSection): privacy, devices, consent and note accuracy
+- [About](https://nuiq.com/about/): who we are, our mission and vision
+- [Contact](https://nuiq.com/contact/): sales and support contacts and contact form
+- [Blog](https://nuiq.com/blog/): therapy documentation guides and NuIQ how-to articles
+
+## Guides
+
+- [How To Enable Microphone Access on iOS](https://nuiq.com/blog/how-to-enable-microphone-access-on-ios/)
+- [How to Use Telehealth Features on NuIQ](https://nuiq.com/blog/how-to-use-telehealth-features-on-nuiq/)
+- [How to Use the Import Feature on NuIQ](https://nuiq.com/blog/how-to-use-the-import-feature-on-nuiq/)
+- [How to Use the Listen Feature on NuIQ](https://nuiq.com/blog/how-to-use-the-listen-feature-on-nuiq/)
+- [How to Use the Summary Feature on NuIQ](https://nuiq.com/blog/how-to-use-the-summary-feature-on-nuiq/)
+- [How to Use the Type Feature on NuIQ](https://nuiq.com/blog/how-to-use-the-type-feature-on-nuiq/)
+- [Troubleshooting Microphone Issues while using NuIQ](https://nuiq.com/blog/troubleshooting-microphone-issues-while-using-nuiq/)
+
+## Articles
+
+- [Diversity in Documentation: SOAP Notes and Their Value Across Mental Health Professions](https://nuiq.com/blog/diversity-in-documentation-soap-notes-and-their-value-across-mental-health-professions/)
+- [Ensuring Data Privacy and HIPAA Compliance at NuIQ: A Deep Dive](https://nuiq.com/blog/ensuring-data-privacy-and-hipaa-compliance-at-nuiq-a-deep-dive/)
+- [Perfecting the Art of SOAP Notes for Mental Health Professionals](https://nuiq.com/blog/perfecting-the-art-of-soap-notes-for-mental-health-professionals/)
+- [Simplify Your Session Notes with NuIQ](https://nuiq.com/blog/simplify-your-session-notes-with-q-notes-by-nuiq/)
+- [The Future of Therapy: Augmented by AI](https://nuiq.com/blog/the-future-of-therapy-augmented-by-ai/)
+
+## Optional
+
+- [Privacy Policy and Terms of Service](https://nuiq.com/privacy/)
+- [Past events](https://nuiq.com/events/): conferences where NuIQ has exhibited

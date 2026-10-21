@@ -308,6 +308,35 @@
     }, ['pw', 'pw2'], 'This page isn’t connected to the NuIQ account system yet, so no account was created and nothing was sent.');
   }
 
+  // Privacy Policy / Terms of Service tabs, driven by ?tab= so footer links open the right one
+  function initLegalTabs() {
+    var tabs = document.querySelectorAll('.legal-tab');
+    if (!tabs.length) return;
+    var titles = {
+      'privacy-policy': 'Privacy Policy | NuIQ',
+      'terms-of-service': 'Terms of Service | NuIQ'
+    };
+
+    function show(key, updateUrl) {
+      if (!titles[key]) key = 'privacy-policy';
+      tabs.forEach(function (tab) {
+        var on = tab.dataset.tab === key;
+        tab.setAttribute('aria-selected', on);
+        document.getElementById(tab.dataset.tab).hidden = !on;
+      });
+      document.title = titles[key];
+      if (updateUrl) history.replaceState(null, '', '?tab=' + key);
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        show(tab.dataset.tab, true);
+      });
+    });
+    show(new URLSearchParams(location.search).get('tab'), false);
+  }
+
   initYear();
   initDropdown();
   initMobileMenu();
@@ -318,4 +347,5 @@
   initLightbox();
   initLoginForm();
   initSignupForm();
+  initLegalTabs();
 })();
