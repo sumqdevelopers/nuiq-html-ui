@@ -1,12 +1,134 @@
 {
   "cleanUrls": false,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy/?tab=privacy-policy",
+      "type": 301
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/privacy/?tab=terms-of-service",
+      "type": 301
+    },
+    {
+      "source": "/acceptable-use-policy",
+      "destination": "/privacy/?tab=terms-of-service",
+      "type": 301
+    },
+    {
+      "source": "/blog/hello-world",
+      "destination": "/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/category/uncategorized",
+      "destination": "/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/guide",
+      "destination": "/blog/category/support/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/technical-support",
+      "destination": "/blog/category/support/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/soap-notes",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/hipaa",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/privacy",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/ai",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/artificial-intelligence",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/automation",
+      "destination": "/blog/category/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/tag/:tag",
+      "destination": "/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/author/:name",
+      "destination": "/blog/",
+      "type": 301
+    },
+    {
+      "source": "/blog/feed",
+      "destination": "/blog/",
+      "type": 301
+    },
+    {
+      "source": "/welcome/privacy",
+      "destination": "/privacy/",
+      "type": 301
+    },
+    {
+      "source": "/welcome/contact",
+      "destination": "/contact/",
+      "type": 301
+    },
+    {
+      "source": "/welcome/signup",
+      "destination": "/signup/",
+      "type": 301
+    },
+    {
+      "source": "/welcome",
+      "destination": "/",
+      "type": 301
+    },
+    {
+      "source": "/welcome/:path*",
+      "destination": "/",
+      "type": 301
+    },
+    {
+      "source": "/contact/sales@nuiq.com",
+      "destination": "/contact/",
+      "type": 301
+    }
+  ],
   "rewrites": [
-    { "source": "/", "destination": "/nuiq-home.html" },
-    { "source": "/contact", "destination": "/nuiq-contact.html" },
-    { "source": "/events", "destination": "/nuiq-events.html" },
-    { "source": "/blog", "destination": "/nuiq-blog.html" },
-    { "source": "/login", "destination": "/login.html" },
-    { "source": "/signup", "destination": "/signup.html" }
+    {
+      "source": "/",
+      "destination": "/nuiq-home.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/nuiq-contact.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/nuiq-events.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/nuiq-blog.html"
+    }
   ]
 }

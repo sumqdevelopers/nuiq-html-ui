@@ -1,0 +1,40 @@
+# nuiq.com – static marketing site on Apache.
+# The app (/login/, /signup/, /notes/, /api/, /thanks/ …) is served from the same
+# domain and is not touched by these rules.
+
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- 301s for old WordPress URLs ---------------------------------------------
+  # Empty WordPress pages that are still in Google's index
+  RewriteRule ^privacy-policy/?$        /privacy/?tab=privacy-policy   [R=301,L]
+  RewriteRule ^terms-of-service/?$      /privacy/?tab=terms-of-service [R=301,L]
+  RewriteRule ^acceptable-use-policy/?$ /privacy/?tab=terms-of-service [R=301,L]
+
+  # Blog leftovers: default post, empty category, tag and author archives
+  RewriteRule ^blog/hello-world/?$               /blog/ [R=301,L]
+  RewriteRule ^blog/category/uncategorized/?$    /blog/ [R=301,L]
+  RewriteRule ^blog/tag/(guide|technical-support)/?$ /blog/category/support/ [R=301,L]
+  RewriteRule ^blog/tag/(soap-notes|hipaa|privacy|ai|artificial-intelligence|automation)/?$ /blog/category/blog/ [R=301,L]
+  RewriteRule ^blog/(tag|author)/               /blog/ [R=301,L]
+  RewriteRule ^blog/feed/?$                      /blog/ [R=301,L]
+
+  # Old WordPress install path (/welcome/…); query strings like ?tab= are kept
+  RewriteRule ^welcome/privacy/?$ /privacy/ [R=301,L]
+  RewriteRule ^welcome/contact/?$ /contact/ [R=301,L]
+  RewriteRule ^welcome/signup/?$  /signup/  [R=301,L]
+  RewriteRule ^welcome(/.*)?$     /         [R=301,L]
+
+  # Broken "Reach out" link on the old contact page
+  RewriteRule ^contact/sales@nuiq\.com/?$ /contact/ [R=301,L]
+
+  # --- Clean URLs (same map as serve.json) -----------------------------------------
+  RewriteRule ^(contact|events|blog)$ /$1/ [R=301,L]
+  RewriteRule ^$         nuiq-home.html    [L]
+  RewriteRule ^contact/$ nuiq-contact.html [L]
+  RewriteRule ^events/$  nuiq-events.html  [L]
+  RewriteRule ^blog/$    nuiq-blog.html    [L]
+</IfModule>

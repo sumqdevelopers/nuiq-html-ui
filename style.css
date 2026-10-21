@@ -6,7 +6,6 @@
 
      .theme-mint  – Home, Blog          (Inter / Raleway, mint footer)
      .theme-teal  – Contact, Events     (DM Sans, dark-teal footer)
-     .theme-auth  – Login, Sign Up      (centred form, no site header)
 
    Rules whose class names exist in more than one theme (.nav, .faq,
    .site-footer, .social …) are scoped with the theme class so the themes
@@ -20,8 +19,7 @@
     6. Theme: teal
     7. Page: Contact
     8. Page: Events
-    9. Theme: auth (Login, Sign Up)
-   10. Reduced motion
+    9. Reduced motion
    ========================================================================== */
 
 
@@ -2344,200 +2342,7 @@ body.menu-open .mobile-nav {
 
 
 /* ==========================================================================
-   9. Theme: auth (Login, Sign Up)
-   ========================================================================== */
-.theme-auth {
-  --brand: #378082;
-  --brand-dark: #2b6668;
-  --field: #d3d3d3;
-  --ink: #212529;
-  --error: #c22;
-
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-ui: "Varela Round", system-ui, sans-serif;
-  --font-footer: "Open Sans", system-ui, sans-serif;
-
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: var(--font-body);
-  color: var(--ink);
-}
-
-.theme-auth a {
-  color: var(--brand);
-}
-
-.auth-main {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 16px;
-}
-
-.auth-panel {
-  width: 100%;
-  max-width: 345px;
-  text-align: center;
-}
-
-.auth-logo {
-  display: inline-block;
-}
-
-.auth-logo img {
-  width: auto;
-  height: 48px;
-}
-
-.auth-panel h1 {
-  margin: 12px 0 24px;
-  font-size: 28px;
-  font-weight: 500;
-  color: #000;
-}
-
-/* Form */
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: left;
-}
-
-.auth-field {
-  position: relative;
-}
-
-.auth-field input {
-  width: 100%;
-  height: 58px;
-  padding: 22px 12px 6px;
-  border: 0;
-  border-radius: 6px;
-  outline: 0;
-  background: var(--field);
-  font-family: var(--font-ui);
-  font-size: 16px;
-  color: #000;
-  transition: box-shadow .15s;
-}
-
-/* Floating label: sits inside the field, moves up once it's focused or filled */
-.auth-field label {
-  position: absolute;
-  left: 12px;
-  top: 19px;
-  font-size: 15px;
-  color: #000;
-  pointer-events: none;
-  transition: all .15s;
-}
-
-.auth-field input:focus {
-  box-shadow: 0 0 0 2px var(--brand);
-}
-
-.auth-field input:focus + label,
-.auth-field input:not(:placeholder-shown) + label {
-  top: 6px;
-  font-size: 11px;
-  color: #444;
-}
-
-.auth-field.invalid input {
-  box-shadow: 0 0 0 2px #d33;
-}
-
-.auth-field .err {
-  display: none;
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--error);
-}
-
-.auth-field.invalid .err {
-  display: block;
-}
-
-.auth-forgot {
-  align-self: flex-end;
-  margin-top: -2px;
-  font-size: 16px;
-}
-
-.auth-forgot:hover,
-.auth-alt a:hover {
-  text-decoration: underline;
-}
-
-.auth-form button {
-  height: 42px;
-  margin-top: 6px;
-  border: 0;
-  border-radius: 6px;
-  background: var(--brand);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .18);
-  font-family: var(--font-ui);
-  font-size: 16px;
-  letter-spacing: 1.6px;
-  color: #fff;
-  cursor: pointer;
-  transition: background .2s;
-}
-
-.auth-form button:hover {
-  background: var(--brand-dark);
-}
-
-.auth-alt {
-  margin-top: 24px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.auth-notice {
-  display: none;
-  margin-top: 16px;
-  padding: 10px 12px;
-  border: 1px solid #b9d6d6;
-  border-radius: 6px;
-  background: #eef6f6;
-  font-size: 14px;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.auth-notice.show {
-  display: block;
-}
-
-/* Footer */
-.auth-footer {
-  padding: 10px 16px;
-  background: var(--brand);
-  font-family: var(--font-footer);
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
-  text-align: center;
-}
-
-.auth-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-@media (max-width: 480px) {
-  .auth-footer {
-    font-size: 13px;
-  }
-}
-
-
-/* ==========================================================================
-   10. Reduced motion
+   9. Reduced motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -3028,4 +2833,25 @@ body.menu-open .mobile-nav {
   margin-top: 12px;
   font-size: 17px;
   color: var(--text);
+}
+
+.blog-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.blog-cats a {
+  padding: 6px 14px;
+  border: 1px solid var(--teal-dark);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.blog-cats a:hover {
+  background: var(--teal);
+  color: #fff;
 }

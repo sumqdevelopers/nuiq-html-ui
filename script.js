@@ -148,9 +148,22 @@
     });
   }
 
-  // Contact form: client-side validation only.
-  // This static copy has no backend, so it does NOT send the message anywhere.
-  // On a valid submit it offers to open the visitor's email app with the details filled in.
+  // Contact form: validates, then sends through the app's contact API (same as the old site):
+  // POST /api/generateToken.php for a token, then POST /api/sendContactEmail.php.
+  // Success goes to /thanks/, which carries the ad conversion tags.
+  // If the API can't be reached, the visitor is offered their email app instead.
+  function postForm(url, data) {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+      body: new URLSearchParams(data).toString(),
+      credentials: 'same-origin'
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    });
+  }
+
   function initContactForm() {
     var form = document.getElementById('contactForm');
     if (!form) return;
@@ -188,21 +201,57 @@
         return;
       }
 
+      var data = {
+        name: form.Name.value.trim(),
+        email: form.Email.value.trim(),
+        phone: form.Phone.value.trim(),
+        company: form.Organization.value.trim(),
+        ehr: form.EHR.value.trim(),
+        message: form.Message.value.trim()
+      };
+      var button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      notice.classList.remove('show');
+
+      postForm('/api/generateToken.php', {})
+        .then(function (res) {
+          data.token = res.token;
+          return postForm('/api/sendContactEmail.php', data);
+        })
+        .then(function (res) {
+          if (res.success) {
+            window.location.href = '/thanks/';
+            return;
+          }
+          notice.textContent = res.error_message || 'Your message couldn’t be sent. Please try again.';
+          notice.classList.add('show');
+        })
+        .catch(function () {
+          showEmailFallback(data);
+        })
+        .then(function () {
+          button.disabled = false;
+          button.textContent = 'Submit';
+        });
+    });
+
+    function showEmailFallback(data) {
       var body =
-        'Name: ' + form.Name.value +
-        '\nPhone: ' + form.Phone.value +
-        '\nEmail: ' + form.Email.value +
-        '\nOrganization: ' + form.Organization.value +
-        '\nEHR / EMR: ' + form.EHR.value +
-        '\n\n' + form.Message.value;
+        'Name: ' + data.name +
+        '\nPhone: ' + data.phone +
+        '\nEmail: ' + data.email +
+        '\nOrganization: ' + data.company +
+        '\nEHR / EMR: ' + data.ehr +
+        '\n\n' + data.message;
       var href = 'mailto:sales@nuiq.com' +
-        '?subject=' + encodeURIComponent('Contact form – ' + form.Name.value) +
+        '?subject=' + encodeURIComponent('Contact form – ' + data.name) +
         '&body=' + encodeURIComponent(body);
 
-      notice.innerHTML = 'This static copy of the page isn’t connected to a form backend, so your message has <b>not</b> been sent. ' +
-        '<a href="' + href + '">Open it in your email app</a> to send it to sales@nuiq.com.';
+      notice.innerHTML = 'Sorry, we couldn’t send your message just now. ' +
+        '<a href="' + href + '">Send it from your email app</a> to sales@nuiq.com instead.';
       notice.classList.add('show');
-    });
+    }
   }
 
   // Event image preview (lightbox)
@@ -239,73 +288,6 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && lightbox.classList.contains('open')) close();
     });
-  }
-
-  // Login / Sign Up forms: client-side validation only.
-  // These pages are not connected to the NuIQ account system, so nothing is
-  // sent anywhere and password fields are cleared on every submit.
-  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  var PHONE_RE = /^[0-9+()\-.\s]{7,20}$/;
-
-  function initAuthForm(formId, rules, passwordIds, successMessage) {
-    var form = document.getElementById(formId);
-    if (!form) return;
-    var notice = document.getElementById('authNotice');
-
-    function check(id) {
-      var input = document.getElementById(id);
-      var ok = rules[id](input.value);
-      input.closest('.auth-field').classList.toggle('invalid', !ok);
-      return ok;
-    }
-
-    function showNotice(message) {
-      notice.textContent = message;
-      notice.classList.add('show');
-    }
-
-    // Once a field has been flagged, re-check it as the visitor types
-    form.addEventListener('input', function (e) {
-      var field = e.target.closest('.auth-field');
-      if (field && field.classList.contains('invalid')) check(e.target.id);
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var valid = Object.keys(rules).map(check).every(Boolean);
-      passwordIds.forEach(function (id) { document.getElementById(id).value = ''; });
-
-      if (!valid) {
-        notice.classList.remove('show');
-        return;
-      }
-      showNotice(successMessage);
-    });
-
-    var forgot = form.querySelector('.auth-forgot');
-    if (forgot) {
-      forgot.addEventListener('click', function (e) {
-        e.preventDefault();
-        showNotice('Password reset isn’t connected on this page yet.');
-      });
-    }
-  }
-
-  function initLoginForm() {
-    initAuthForm('loginForm', {
-      email: function (v) { return EMAIL_RE.test(v.trim()); },
-      pw: function (v) { return v !== ''; }
-    }, ['pw'], 'This page isn’t connected to the NuIQ account system yet, so nothing was sent and you have not been signed in.');
-  }
-
-  function initSignupForm() {
-    initAuthForm('signupForm', {
-      name: function (v) { return v.trim().length > 1; },
-      email: function (v) { return EMAIL_RE.test(v.trim()); },
-      phone: function (v) { return v.trim() === '' || PHONE_RE.test(v.trim()); },
-      pw: function (v) { return v.length >= 8; },
-      pw2: function (v) { return v !== '' && v === document.getElementById('pw').value; }
-    }, ['pw', 'pw2'], 'This page isn’t connected to the NuIQ account system yet, so no account was created and nothing was sent.');
   }
 
   // Privacy Policy / Terms of Service tabs, driven by ?tab= so footer links open the right one
@@ -345,7 +327,5 @@
   initBackToTop();
   initContactForm();
   initLightbox();
-  initLoginForm();
-  initSignupForm();
   initLegalTabs();
 })();
